@@ -212,6 +212,14 @@ $ui-yellowLight:     hsla(60, 100%, 75%, 5%);
   $color-dot-border-selected: -color-bg-default
 );
 
+@forward "components/sidebar" as sidebar-* with (
+  $color-sidebar-bg-hover:       -color-base-6,
+  $color-sidebar-bg-focused:     -color-base-6,
+  $color-sidebar-border-focused: -color-base-6,
+  $color-sidebar-bg-selected:    -color-base-6,
+  $color-sidebar-bg-selected-within: -color-base-6
+);
+
 @forward "components/slider" as slider-* with (
   $color-track: scale.$accent-8
 );

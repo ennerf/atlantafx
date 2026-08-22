@@ -38,6 +38,7 @@ public record Nav(String title,
         SpinsPage.class,
         SegmentedControlPage.class,
         SelectableTextFlowPage.class,
+        SidebarPage.class,
         TilePage.class,
         TabLinePage.class,
         ToggleSwitchPage.class
