@@ -6,7 +6,7 @@
 
 $color-bg:           -color-bg-subtle !default;
 $color-bg-hover:     if(cfg.$darkMode, -color-base-6, -color-base-2) !default;
-$color-border-hover: -color-accent-muted !default;
+$color-border-hover: -color-border-default !default;
 $color-bg-selected:  $color-bg-hover !default;
 $color-separator:    -color-border-muted !default;
 
@@ -39,6 +39,7 @@ $breadcrumbs-link-padding-y: 2px   !default;
 
       &:hover {
         -fx-background-insets: 0, cfg.$border-width;
+        -fx-background-color: -color-button-bg-hover;
       }
 
       &.button-icon {
@@ -49,7 +50,8 @@ $breadcrumbs-link-padding-y: 2px   !default;
 
     .toggle-button {
       -color-button-bg: $color-bg;
-      -color-button-border-hover: $color-border-hover;
+      -color-button-bg-hover: $color-bg;
+      -color-button-border-hover: $color-bg;
       -color-button-bg-selected: $color-bg-selected;
       -color-button-fg-selected: -color-fg-default;
       -fx-background-insets: 0;
@@ -57,11 +59,11 @@ $breadcrumbs-link-padding-y: 2px   !default;
 
       &:hover {
         -fx-background-insets: 0, cfg.$border-width;
-        -fx-background-color: -color-button-border-hover, $color-bg;
+        -fx-background-color: -color-button-border-hover, -color-button-bg-hover;
       }
 
       &:hover:selected {
-        -fx-background-color: -color-button-border-hover, $color-bg-selected;
+        -fx-background-color: -color-button-bg-selected;
       }
     }
 
