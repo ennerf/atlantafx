@@ -19,8 +19,8 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <java.version>25</java.version>
-        <openjfx.version>26.0.2</openjfx.version>
-        <jfx.static.version>${openjfx.version}-1</jfx.static.version>
+        <openjfx.version>27</openjfx.version>
+        <jfx.static.version>${openjfx.version}</jfx.static.version>
 
         <app.launcher>atlantafx.sampler.Launcher</app.launcher>
         <app.module>atlantafx.sampler</app.module>
