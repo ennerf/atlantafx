@@ -6,7 +6,8 @@ import atlantafx.sampler.event.*;
 import atlantafx.sampler.layout.ApplicationWindow;
 import atlantafx.sampler.page.components.*;
 import atlantafx.sampler.page.general.*;
-import atlantafx.sampler.page.showcase.*;
+import atlantafx.sampler.page.showcase.BlueprintsPage;
+import atlantafx.sampler.page.showcase.OverviewPage;
 import atlantafx.sampler.page.showcase.filemanager.FileManagerPage;
 import atlantafx.sampler.page.showcase.musicplayer.MusicPlayerPage;
 import atlantafx.sampler.theme.ThemeManager;
@@ -37,17 +38,11 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Properties;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.nio.charset.StandardCharsets.*;
 
-@Reachable(resources = "**") // adds everything in atlantafx.sampler/* including .java files and assets
-@ReachableFxResources({ "**/*.fxml", "**/*.css" }) // auto parse all CSS and FXML files
-@Reachable(condition = org.kordamp.ikonli.javafx.IkonResolver.class,
-        classes = org.kordamp.ikonli.javafx.IkonResolver.class,
-        resources = {
-        "/META-INF/services/org.kordamp.ikonli.IkonHandler",
-        "/META-INF/resources/*/*/fonts/*.ttf",
-})
-@Reachable(conditionName = "net.datafaker.Faker", resources = {"/*.yml", "/en/**"})
+// Sampler metadata: resources (practically everything including .java files and assets), and reflectively looked-up pages
+@Reachable(resources = "**")
+@ReachableFxResources({"**/*.fxml", "**/*.css"}) // capture anything referenced inside FXML and CSS
 @Reachable(memberAccess = MemberAccess.ALL_DECLARED_CONSTRUCTORS, classes = {
         AccordionPage.class, BreadcrumbsPage.class, ButtonPage.class, CalendarPage.class, CardPage.class,
         ChartPage.class, CheckBoxPage.class, ChoiceBoxPage.class, ColorPickerPage.class, ComboBoxPage.class,
